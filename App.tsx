@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 
-export default function App() {
+const App: React.FC = () => {
 
   const[submitted, SetSubmitted] = useState(false);
 
@@ -19,14 +19,13 @@ export default function App() {
           <TextInput style={styles.inputBox} placeholder="Email..."/>
           <TextInput style={styles.inputBox} placeholder="Username..."/>
           <TextInput style={styles.inputBox} placeholder="Password..."/>
+          {/* vvv button vvv */}
           <TouchableOpacity style={styles.profileButton} onPress={buttonHandler} >
             <Text style={styles.smallText}>
               {submitted ? 'Created' : "Create Profile"}
             </Text>
           </TouchableOpacity>
-          {/* <Button  onPress={buttonHandler} title={submitted ? 'Created' : "Create Profile"}/> */}
         </View>
-
       </View>
       
       <StatusBar style="auto" />
@@ -88,3 +87,4 @@ const styles = StyleSheet.create({
   }
 });
 
+export default App;
