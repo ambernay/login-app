@@ -11,6 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "scheme": "localhost:8000/",
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -24,13 +25,17 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "extra": {
       "eas": {
         "projectId": "2847463a-c0ca-49f6-830d-7675efee75e5"
       }
     },
-    "owner": "ambernay"
+    "owner": "ambernay",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
