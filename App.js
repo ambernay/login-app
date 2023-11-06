@@ -6,7 +6,7 @@ import SignupForm from './components/SignupForm';
 export default function App() {
 
   return (
-    <View>
+    <View style={styles.body}>
       <SignupForm />
       <StatusBar style="auto" />
     </View>
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'tomato',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%'
   }
 });
 

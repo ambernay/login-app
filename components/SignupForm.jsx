@@ -5,7 +5,7 @@ import InputField from './InputField';
 const SignupForm = () => {
 
     const[submitted, SetSubmitted] = useState(false);
-    const [inputValues, setInputValues] = useState({email: '', username: '', password: ''});
+    const [inputValues, setInputValues] = useState({email: 'hello', username: 'world', password: '!'});
     const [hidePassword, setHidePassword] = useState(true);
 
     const buttonHandler = () => {
@@ -14,8 +14,8 @@ const SignupForm = () => {
     }
     
     return (
-        <View style={styles.pageContainer}>
-          <Text style={styles.headingText}>Sign up to Chickie Tendies</Text>
+        <View name='pageContainer' style={styles.pageContainer}>
+          <Text style={styles.headingText}>{inputValues.email + inputValues.username + inputValues.password}</Text>
 
           <View style={styles.formContainer}>
             <InputField onChangeText={(newText) => setInputValues({...inputValues, ['email']: newText})} 
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     pageContainer: {
       height: '70%',
       width: '70%',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
   
     headingText: {
@@ -69,30 +69,25 @@ const styles = StyleSheet.create({
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-evenly',
+      alignSelf: 'center',
       alignItems: 'center',
-      height: '60%'
-    },
-  
-    inputBox: {
-      backgroundColor: 'white',
-      borderColor: '#ddd',
-      borderWidth: 1,
-      width: '100%',
-      height: 30,
-      padding: 5
+      height: '60%',
+      maxWidth: 300,
+      width: '100%'
     },
   
     profileButton: {
       backgroundColor: 'white',
-      height: '25%',
+      height: '15%',
       width: '60%',
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 15
+      marginTop: 15,
+      padding: 10
     },
   
     smallText: {
-      color: 'gray',
+      color: '#395C5F',
       fontSize: 20
     }
   });

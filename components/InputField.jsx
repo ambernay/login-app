@@ -7,7 +7,7 @@ const InputField = ({ placeholder, isPassword, hidePassword, setHidePassword, ic
         <View style={styles.inputContainer}>
             <IonIcon
                 name={iconName}
-                style={styles.leftIcon}
+                style={[styles.icon, styles.leftIcon]}
             />
             <TextInput
                 style={styles.inputBox}
@@ -21,7 +21,7 @@ const InputField = ({ placeholder, isPassword, hidePassword, setHidePassword, ic
             {isPassword &&(
                 <IonIcon
                     name={hidePassword ? 'eye-off' : 'eye'}
-                    style={styles.rightIcon}
+                    style={[styles.icon, styles.rightIcon]}
                     onPress={() => {
                         setHidePassword(!hidePassword);
                     }}
@@ -41,29 +41,33 @@ const styles = StyleSheet.create({
       },
   
     inputBox: {
-      backgroundColor: 'white',
-      borderColor: '#ddd',
-      borderWidth: 1,
-      width: '100%',
-      height: 30,
-      paddingLeft: 30
+        flex: 1,
+        backgroundColor: 'white',
+        placeholderTextColor: '#839A7A',
+        color: '#395C5F',
+        borderColor: '#ddd',
+        borderWidth: 1,
+        width: '100%',
+        height: 30,
+        paddingLeft: 35,
+        paddingRight: 35,
+        paddingTop: 15,
+        paddingBottom: 15
+    },
+
+    icon: {
+        top: 0,
+        position: 'absolute',
+        zIndex: 1,
+        color:'#839A7A',
+        fontSize: 24,
     },
 
     leftIcon: {
         left: 2,
-        top: -3,
-        position: 'absolute',
-        zIndex: 1,
-        color:'gray',
-        fontSize: 24,
     },
     rightIcon: {
         right: 2,
-        top: -3,
-        position: 'absolute',
-        zIndex: 1,
-        color:'gray',
-        fontSize: 24,
     }
   });
 
