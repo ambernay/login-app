@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
-const InputField = ({ placeholder, isPassword, hidePassword, setHidePassword, iconName }) => {
+const InputField = ({ placeholder, isPassword, hidePassword, setHidePassword, iconName, onChangeText }) => {
     return (
         <View style={styles.inputContainer}>
             <IonIcon
@@ -13,10 +13,12 @@ const InputField = ({ placeholder, isPassword, hidePassword, setHidePassword, ic
                 style={styles.inputBox}
                 autoCorrect={false}
                 autoCapitalize='none'
+                placeholderTextColor= '#839A7A'
                 //vv props vv
                 placeholder={placeholder}
                 isPassword={isPassword}
                 hidePassword={hidePassword}
+                onChangeText={onChangeText}
             />
             {isPassword &&(
                 <IonIcon
@@ -43,7 +45,6 @@ const styles = StyleSheet.create({
     inputBox: {
         flex: 1,
         backgroundColor: 'white',
-        placeholderTextColor: '#839A7A',
         color: '#395C5F',
         borderColor: '#ddd',
         borderWidth: 1,

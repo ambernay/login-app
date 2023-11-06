@@ -18,7 +18,8 @@ const SignupForm = () => {
           <Text style={styles.headingText}>{inputValues.email + inputValues.username + inputValues.password}</Text>
 
           <View style={styles.formContainer}>
-            <InputField onChangeText={(newText) => setInputValues({...inputValues, ['email']: newText})} 
+            <InputField 
+              onChangeText={(newText) => setInputValues({...inputValues, ['username']: newText})} 
               placeholder="Email..."
               iconName='mail'
             />
