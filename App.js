@@ -6,7 +6,7 @@ import SignupForm from './components/SignupForm';
 export default function App() {
 
   return (
-    <View style={styles.body}>
+    <View>
       <SignupForm />
       <StatusBar style="auto" />
     </View>

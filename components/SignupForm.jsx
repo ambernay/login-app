@@ -1,32 +1,51 @@
 import React, { useState, useRef } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import InputField from './InputField';
 
 const SignupForm = () => {
 
     const[submitted, SetSubmitted] = useState(false);
-
-    const [inputValues, setInputValues] = useState({email: 'Hello', username: 'world', password: '!'});
+    const [inputValues, setInputValues] = useState({email: '', username: '', password: ''});
+    const [hidePassword, setHidePassword] = useState(true);
 
     const buttonHandler = () => {
       SetSubmitted(!submitted);
+      console.log(inputValues);
     }
     
-
     return (
         <View style={styles.pageContainer}>
-        <Text style={styles.headingText}>Sign up to Chickie Tendies</Text>
+          <Text style={styles.headingText}>Sign up to Chickie Tendies</Text>
 
-        <View style={styles.formContainer}>
-          <TextInput style={styles.inputBox} onChangeText={(newText) => setInputValues({...inputValues, ['email']: newText})} placeholder="Email..."/>
-          <TextInput style={styles.inputBox} onChangeText={(newText) => setInputValues({...inputValues, ['username']: newText})} placeholder="Username..."/>
-          <TextInput style={styles.inputBox} onChangeText={(newText) => setInputValues({...inputValues, ['password']: newText})} placeholder="Password..."/>
-          <TouchableOpacity style={styles.profileButton} onPress={buttonHandler} >
-            <Text style={styles.smallText}>
-              {submitted ? 'Created' : "Create Profile"}
-            </Text>
-          </TouchableOpacity>
-          {/* <Button  onPress={buttonHandler} title={submitted ? 'Created' : "Create Profile"}/> */}
-        </View>
+          <View style={styles.formContainer}>
+            <InputField onChangeText={(newText) => setInputValues({...inputValues, ['email']: newText})} 
+              placeholder="Email..."
+              iconName='mail'
+            />
+            <InputField
+              onChangeText={(newText) => setInputValues({...inputValues, ['username']: newText})} 
+              placeholder="Username..."
+              iconName='person'
+            />
+            <InputField
+              secureTextEntry={hidePassword} 
+              onChangeText={(newText) => setInputValues({...inputValues, ['password']: newText})} 
+              placeholder="Password..."
+              iconName='lock-closed'
+              textContentType={'password'}
+              hidePassword={hidePassword}
+              setHidePassword={setHidePassword}
+              isPassword={true}
+            />
+            <TouchableOpacity 
+              style={styles.profileButton} 
+              onPress={buttonHandler} 
+            >
+              <Text style={styles.smallText}>
+                {submitted ? 'Created' : "Create Profile"}
+              </Text>
+            </TouchableOpacity>
+          </View>
       </View>
     )
 }
@@ -34,7 +53,9 @@ const SignupForm = () => {
 const styles = StyleSheet.create({
 
     pageContainer: {
-        width: '70%'
+      height: '70%',
+      width: '70%',
+      justifyContent: 'center'
     },
   
     headingText: {
@@ -49,7 +70,7 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       justifyContent: 'space-evenly',
       alignItems: 'center',
-      height: '50%'
+      height: '60%'
     },
   
     inputBox: {
@@ -63,10 +84,11 @@ const styles = StyleSheet.create({
   
     profileButton: {
       backgroundColor: 'white',
-      height: '20%',
+      height: '25%',
       width: '60%',
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop: 15
     },
   
     smallText: {
