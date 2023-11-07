@@ -39,10 +39,9 @@ const InputField = ({ placeholder, isPassword, hidePassword, setHidePassword, ic
 const styles = StyleSheet.create({
 
     inputContainer: {
-        height: '12%',
+        height: 38,
         width: '100%',
-        justifyContent: 'center',
-        marginTop: 15 
+        justifyContent: 'center'
       },
   
     inputBox: {
@@ -53,13 +52,13 @@ const styles = StyleSheet.create({
         borderColor: '#ddd',
         borderWidth: 1,
         width: '100%',
-        height: 30,
+        height: 'inherit',
         paddingLeft: 35,
         paddingRight: 35,
     },
 
     icon: {
-        top: '20%',
+        top: '15%',
         position: 'absolute',
         zIndex: 1,
         color:'#839A7A',

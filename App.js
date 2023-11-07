@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
-import SignupForm from './components/SignupForm';
+import { StyleSheet, View } from 'react-native';
+import SignupForm from './app/SignupForm';
 
 export default function App() {
 
