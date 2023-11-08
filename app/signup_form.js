@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
+import styles from '../assets/styles';
 import InputField from '../components/InputField';
 
 const SignupForm = () => {
@@ -14,7 +15,7 @@ const SignupForm = () => {
     }
     
     return (
-        <View name='pageContainer' style={styles.pageContainer}>
+        <View name='pageContainer' style={[styles.container, styles.pageContainer]}>
           <Text style={styles.headingText}>Chickie Tendies</Text>
 
           <View style={styles.formContainer}>
@@ -41,7 +42,7 @@ const SignupForm = () => {
               isPassword={true}
             />
             <TouchableOpacity 
-              style={styles.profileButton} 
+              style={[styles.button, styles.profileButton]} 
               onPress={buttonHandler} 
             >
               <Text style={styles.smallText}>
@@ -53,46 +54,46 @@ const SignupForm = () => {
     )
 }
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
 
-    pageContainer: {
-      height: '70%',
-      width: '70%',
-      justifyContent: 'center',
-    },
+//     pageContainer: {
+//       height: '70%',
+//       width: '70%',
+//       justifyContent: 'center',
+//     },
   
-    headingText: {
-      display: 'flex',
-      fontSize: 24,
-      color: 'white',
-      alignSelf: 'center'
-    },
+//     headingText: {
+//       display: 'flex',
+//       fontSize: 24,
+//       color: 'white',
+//       alignSelf: 'center'
+//     },
   
-    formContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-evenly',
-      alignSelf: 'center',
-      alignItems: 'center',
-      height: '60%',
-      maxWidth: 300,
-      width: '100%'
-    },
+//     formContainer: {
+//       display: 'flex',
+//       flexDirection: 'column',
+//       justifyContent: 'space-evenly',
+//       alignSelf: 'center',
+//       alignItems: 'center',
+//       height: '60%',
+//       maxWidth: 300,
+//       width: '100%'
+//     },
   
-    profileButton: {
-      backgroundColor: 'white',
-      height: '15%',
-      width: '60%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 15,
-      padding: 10
-    },
+//     profileButton: {
+//       backgroundColor: 'white',
+//       height: '15%',
+//       width: '60%',
+//       justifyContent: 'center',
+//       alignItems: 'center',
+//       marginTop: 15,
+//       padding: 10
+//     },
   
-    smallText: {
-      color: '#395C5F',
-      fontSize: 22
-    }
-  });
+//     smallText: {
+//       color: '#395C5F',
+//       fontSize: 22
+//     }
+//   });
 
 export default SignupForm;
